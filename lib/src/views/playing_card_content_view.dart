@@ -23,12 +23,8 @@ class PlayingCardContentView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        double width = constraints.hasBoundedWidth
-            ? constraints.maxWidth
-            : constraints.maxHeight * playingCardAspectRatio;
-        double height = constraints.hasBoundedHeight
-            ? constraints.maxHeight
-            : constraints.maxWidth / playingCardAspectRatio;
+        double width = constraints.hasBoundedWidth ? constraints.maxWidth : constraints.maxHeight * playingCardAspectRatio;
+        double height = constraints.hasBoundedHeight ? constraints.maxHeight : constraints.maxWidth / playingCardAspectRatio;
         // these magic numbers are based on measurements
         // taken from a few decks of standard decks of cards.
         double innerWidth = width * 1.6875 / 2.5;
@@ -80,20 +76,20 @@ class PlayingCardContentView extends StatelessWidget {
               ),
             ),
             // Top label and suit
-            Positioned(
-              left: sideOffset,
-              top: topOffset,
-              child: cornerContainer,
-            ),
-            // Bottom label and suit
-            Positioned(
-              right: sideOffset,
-              bottom: topOffset,
-              child: RotatedBox(
-                quarterTurns: 2,
-                child: cornerContainer,
-              ),
-            ),
+            // Positioned(
+            //   left: sideOffset,
+            //   top: topOffset,
+            //   child: cornerContainer,
+            // ),
+            // // Bottom label and suit
+            // Positioned(
+            //   right: sideOffset,
+            //   bottom: topOffset,
+            //   child: RotatedBox(
+            //     quarterTurns: 2,
+            //     child: cornerContainer,
+            //   ),
+            // ),
           ],
         );
       },
